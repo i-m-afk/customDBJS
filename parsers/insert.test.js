@@ -6,7 +6,7 @@ describe("with a valid command", () => {
   test("It returns valid command", () => {
     const insertCommand = parseInsertCommand(command);
     expect(insertCommand.record).toEqual({ a: 10, b: 20 });
-    expect(insertCommand.tableName).toBe("table");
+    expect(insertCommand.table.tableName).toBe("table");
   });
 });
 describe("with a invalid record", () => {
