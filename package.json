@@ -1,0 +1,17 @@
+{
+  "name": "customdbjs",
+  "version": "1.0.0",
+  "description": "A custom database project written in JavaScript to parse and execute queries",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "save-dev": "^0.0.1-security"
+  }
+}
