@@ -15,7 +15,7 @@ function parseInsertCommand(commandString) {
   const record = safeParseJSON(regexMatch.groups.record);
   const tableName = regexMatch.groups.tableName;
   if (record == null || tableName === "") return;
-  return new InsertCommand({ record, tableName });
+  return new InsertCommand({ tableName, record });
 }
 
 // return null if cant parse the string

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^29.5.0",
-    "save-dev": "^0.0.1-security"
+    "save-dev": "^0.0.1-security",
+    "uuid": "^9.0.0"
   }
 }

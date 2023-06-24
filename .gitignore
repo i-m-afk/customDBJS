@@ -25,3 +25,9 @@ Thumbs.db
 # Ignore npm/yarn lock files
 package-lock.json
 yarn.lock
+
+# Jest generated files
+/coverage/
+
+# data json files
+/data/

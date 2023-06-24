@@ -1,6 +1,11 @@
+const Table = require("../Table");
 module.exports = class InsertCommand {
-  constructor({ record, tableName }) {
+  constructor({ tableName, record }) {
+    this.table = new Table(tableName);
     this.record = record;
-    this.tableName = tableName;
+  }
+
+  async perform() {
+    return await this.table.insertRecord(this.record);
   }
 };
