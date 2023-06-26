@@ -1,20 +1,27 @@
-const insertParser = require("./parsers/insert");
-const commandString = `INSERT {"rishav" : 1} INTO table`;
-const insertCommand = insertParser(commandString);
+const readLine = require("readline");
+const parseCommand = require("./parseCommand");
+const rl = readLine.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-async function main() {
-  console.log(await insertCommand.perform());
+async function start() {
+  while (true) {
+    try {
+      const commandString = await waitForCommand();
+      printJSON(await parseCommand(commandString));
+    } catch (error) {
+      console.log(`${error.name}: ${error.message}`);
+    }
+  }
 }
-main();
+start();
 
-// Get user input
-
-// Choose the parser
-
-// Create parser for the input
-
-// Execute the input
-
-// Return data
-
-// repeat
+function waitForCommand() {
+  return new Promise((resolve) => {
+    rl.question(">", resolve);
+  });
+}
+function printJSON(string) {
+  console.log(JSON.stringify(string, null, 2));
+}
