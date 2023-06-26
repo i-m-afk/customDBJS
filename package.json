@@ -10,9 +10,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  },
   "dependencies": {
     "jest": "^29.5.0",
+    "mock-fs": "^5.2.0",
     "save-dev": "^0.0.1-security",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest-extended": "^4.0.0"
   }
 }
