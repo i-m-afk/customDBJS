@@ -1,5 +1,6 @@
-const pareseInsertCommand = require("./parsers/insert");
-const parsers = [pareseInsertCommand];
+const parseInsertCommand = require("./parsers/insert");
+const parseSelectCommand = require("./parsers/select");
+const parsers = [parseInsertCommand, parseSelectCommand];
 module.exports = async function parseCommand(commandString) {
   const command = parsers
     .map((parser) => parser(commandString))
