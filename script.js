@@ -1,11 +1,13 @@
 const readLine = require("readline");
 const parseCommand = require("./parseCommand");
+const fs = require("fs");
 const rl = readLine.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
 async function start() {
+  checkFileExist();
   while (true) {
     try {
       const commandString = await waitForCommand();
@@ -24,4 +26,8 @@ function waitForCommand() {
 }
 function printJSON(string) {
   console.log(JSON.stringify(string, null, 2));
+}
+
+function checkFileExist() {
+  fs.mkdirSync("./data", { recursive: true });
 }

@@ -36,14 +36,10 @@ module.exports = class Table {
           }
         })
         .then((data) => {
-          fs.writeFile(
-            this.filePath,
-            JSON.stringify([...data, recordWithID]),
-            (error) => {
-              if (error) return reject(error);
-              resolve(recordWithID);
-            }
-          );
+          fs.writeFile(this.filePath, JSON.stringify([...data, recordWithID]), (error) => {
+            if (error) return reject(error);
+            resolve(recordWithID);
+          });
         });
     });
 

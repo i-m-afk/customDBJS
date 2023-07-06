@@ -61,9 +61,7 @@ describe("#insertData", () => {
     test("It inserts record", async () => {
       const table = new Table("table");
       const dataToInsert = { a: 8, b: 9 };
-      const { _id, ...newRecordAttributes } = await table.insertRecord(
-        dataToInsert
-      );
+      const { _id, ...newRecordAttributes } = await table.insertRecord(dataToInsert);
       expect(JSON.parse(fs.readFileSync(`data/table.json`))).toEqual(
         expect.arrayContaining([...data, { _id, ...newRecordAttributes }])
       );
@@ -108,9 +106,7 @@ describe("#insertData", () => {
     test("It inserts a record", async () => {
       const table = new Table("table"); // Create a new table instance
       const dataToInsert = { a: 8, b: 9 }; // Data to be inserted
-      const { _id, ...newRecordAttributes } = await table.insertRecord(
-        dataToInsert
-      ); // Insert the data and capture the returned record attributes
+      const { _id, ...newRecordAttributes } = await table.insertRecord(dataToInsert); // Insert the data and capture the returned record attributes
 
       // Assertion to check if the inserted record is stored in the table JSON file
       expect(JSON.parse(fs.readFileSync(`data/table.json`))).toEqual(

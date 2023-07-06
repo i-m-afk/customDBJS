@@ -20,7 +20,7 @@ function parseSelectCommand(commandString) {
     .map((column) => column.trim()) // Trim spaces from each column
     .filter((column) => column !== ""); // Remove empty columns like a,,,b
   if (columns.length === 0) return;
-        
+
   const tableName = regexMatch.groups.tableName;
 
   return new SelectCommand({

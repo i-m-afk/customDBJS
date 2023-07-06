@@ -10,12 +10,15 @@ This project is currently in development. It is not yet ready for use. Feel free
 
 ### `npm start`
 
-Runs the app in terminal
+Runs the application in the terminal.
 
 ### `npm test`
 
-Launches Jest test runner
-[learn more](https://jestjs.io/docs/getting-started)
+Launches the Jest test runner for running automated tests. For more information about Jest, please refer to the [official documentation](https://jestjs.io/docs/getting-started)
+
+### `prettier . --write`
+
+Formats the code using Prettier to ensure consistent code style and formatting.
 
 ## SELECT statement on table
 
@@ -41,4 +44,5 @@ Creates table if it does not exists
 -- Some comment
 ```
 
+You can add comments using the "--" syntax.
 Any command under -- will not execute.
