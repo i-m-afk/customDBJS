@@ -1,7 +1,7 @@
 const InsertCommand = require("../commands/InsertCommand");
 
 // parse this type of input
-// INSERT {"a" : 1} INTO tableName
+// INSERT {"a" : 1, "b": 2} INTO tableName
 const INSERT_COMMAND = "INSERT";
 const BEFORE_TABLE_COMMAND = "INTO";
 const REGEX = new RegExp(
