@@ -11,7 +11,7 @@ describe("With all columns selected", () => {
   it("returns the data as is", async () => {
     const spy = jest.spyOn(selectCommand.table, "readData").mockResolvedValue(data);
 
-    expect(await selectCommand.performWhere()).toEqual(data);
+    expect(await selectCommand.perform()).toEqual(data);
     expect(spy).toHaveBeenCalled();
 
     spy.mockRestore();
@@ -28,7 +28,7 @@ describe("With specific columns selected", () => {
   it("returns only the selected columns", async () => {
     const spy = jest.spyOn(selectCommand.table, "readData").mockResolvedValue(data);
 
-    expect(await selectCommand.performWhere()).toEqual([
+    expect(await selectCommand.perform()).toEqual([
       { id: 1, name: "John" },
       { id: 2, name: "Jane" },
     ]);
@@ -48,7 +48,7 @@ describe("With where command", () => {
   it("returns only the selected columns", async () => {
     const spy = jest.spyOn(selectCommand.table, "readData").mockResolvedValue(data);
 
-    expect(await selectCommand.performWhere()).toEqual([
+    expect(await selectCommand.perform()).toEqual([
       { id: 1, name: "John" },
       { id: 2, name: "Jane" },
     ]);
