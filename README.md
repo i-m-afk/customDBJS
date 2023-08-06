@@ -41,13 +41,13 @@ Creates table if it does not exists
 ## WHERE clause
 
 ```sql
-SELECT * FROM tableName where {"columnOne": value}
+SELECT * FROM tableName WHERE {"columnOne": value}
 ```
 
 ## DELETE a record in table
 
 ```sql
-DELETE FROM tableName where {"columnOne": value}
+DELETE FROM tableName WHERE {"columnOne": value}
 ```
 
 ## Add Comments

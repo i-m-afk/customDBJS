@@ -7,7 +7,7 @@ module.exports = class SelectCommand {
     this.allColumns = allColumns;
   }
 
-  async performWhere(whereCommand) {
+  async perform(whereCommand) {
     let data = await this.table.readData();
     if (whereCommand) {
       data = whereCommand.perform(data);

@@ -12,5 +12,5 @@ module.exports = async function parseCommand(commandString) {
   if (command == null) throw new InvalidCommandError(CommandString);
 
   const whereCommand = parseWhereCommand(commandString);
-  return await command.performWhere(whereCommand);
+  return await command.perform(whereCommand);
 };
