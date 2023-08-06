@@ -1,4 +1,5 @@
 const InsertCommand = require("../commands/InsertCommand");
+const safeParseJSON = require("../utils/safeParseJSON");
 
 // parse this type of input
 // INSERT {"a" : 1, "b": 2} INTO tableName
@@ -17,14 +18,5 @@ function parseInsertCommand(commandString) {
   if (record == null || tableName === "") return;
   return new InsertCommand({ tableName, record });
 }
-
-// return null if cant parse the string
-safeParseJSON = (string) => {
-  try {
-    return JSON.parse(string);
-  } catch (e) {
-    return;
-  }
-};
 
 module.exports = parseInsertCommand;

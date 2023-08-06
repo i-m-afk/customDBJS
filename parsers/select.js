@@ -16,9 +16,9 @@ function parseSelectCommand(commandString) {
   // not matched
   if (regexMatch == null) return;
   const columns = regexMatch.groups.columns
+    .replace(/\s/g, "")
     .split(",")
-    .map((column) => column.trim()) // Trim spaces from each column
-    .filter((column) => column !== ""); // Remove empty columns like a,,,b
+    .filter((c) => c !== "");
   if (columns.length === 0) return;
 
   const tableName = regexMatch.groups.tableName;
@@ -29,14 +29,5 @@ function parseSelectCommand(commandString) {
     allColumns: columns.includes(WILDCARD), // true if * is present
   });
 }
-
-// return null if cant parse the string
-safeParseJSON = (string) => {
-  try {
-    return JSON.parse(string);
-  } catch (e) {
-    return;
-  }
-};
 
 module.exports = parseSelectCommand;

@@ -36,7 +36,7 @@ describe("With malformed command", () => {
 
 // SELECT a FROM
 describe("With missing table name", () => {
-  const command = "SELECT a FORM";
+  const command = "SELECT * FROM";
 
   test("It returns undefined", () => {
     const selectCommand = parseSelectCommand(command);

@@ -7,12 +7,14 @@ module.exports = class SelectCommand {
     this.allColumns = allColumns;
   }
 
-  async perform() {
-    const data = await this.table.readData();
+  async performWhere(whereCommand) {
+    let data = await this.table.readData();
+    if (whereCommand) {
+      data = whereCommand.perform(data);
+    }
     if (this.allColumns) return data;
     return data.map((object) => {
       return pick(object, this.columns);
     });
-    //return await this.table.insertRecord(this.record);
   }
 };
