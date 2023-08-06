@@ -38,11 +38,22 @@ INSERT {"a" : 10, "B" : 20} INTO table
 
 Creates table if it does not exists
 
+## WHERE clause
+
+```sql
+SELECT * FROM tableName where {"columnOne": value}
+```
+
+## DELETE a record in table
+
+```sql
+DELETE FROM tableName where {"columnOne": value}
+```
+
 ## Add Comments
 
 ```sql
--- Some comment
+-- Some comment here
 ```
 
-You can add comments using the "--" syntax.
-Any command under -- will not execute.
+You can add comments using the "--" syntax. Comments are ignored by the parser.
